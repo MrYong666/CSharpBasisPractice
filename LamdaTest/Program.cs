@@ -10,11 +10,16 @@ namespace LamdaTest
     {
         static void Main(string[] args)
         {
+       
+            Group group = new Group();
+            group.GroupTest2();
+            group.GroupTest1();
+            group.GroupTest();
             object o1 = "1";
             object o2 = "2";
             object o3 = "1";
             object o4 = null;
-            if (o1==o3)
+            if (o1 == o3)
             {
                 string test = "";
             }
@@ -33,8 +38,8 @@ namespace LamdaTest
 
 
             List<Person> persons1 = new List<Person>();
-            persons1.Add(new Person("张,三", "男", 20, 1500, 123));
-            persons1.Add(new Person("张三111", "男", 20, 1500, 123));
+            persons1.Add(new Person("张,三", "男", 12, 1500, 123));
+            persons1.Add(new Person("张三111", "男", 15, 1500, 123));
             persons1.Add(new Person("王成", "男", 32, 3200, 123));
             persons1.Add(new Person("李,丽", "女", 19, 1700, 123));
             persons1.Add(new Person("何英", "女", 35, 3600, 22));
@@ -82,17 +87,16 @@ namespace LamdaTest
                     var tt11 = model.s;
 
                 });
-
-
+            var sum11s = persons1.OrderByDescending(o => o.Age).GroupBy(x => x.UserId);
             var sums = persons1.OrderByDescending(o => o.Age)
             .GroupBy(x => x.UserId)
-            .Select(group => new
+            .Select(group1 => new
             {
-                Peo = group.Key,
+                Peo = group1.Key,
                 //first = group.OrderByDescending(model => model.Age).First(),
-                name = group.Select(m => m.Name).First(),
-                name1 = group.Select(m => m.Name).Last(),
-                age = group.Select(m => m.Age).First()
+                name = group1.Select(m => m.Name).First(),
+                name1 = group1.Select(m => m.Name).Last(),
+                age = group1.Select(m => m.Age).First()
 
             }).ToList();
 

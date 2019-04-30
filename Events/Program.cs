@@ -9,6 +9,7 @@ namespace Events
     /// <summary>
     /// 事件注册者;
     /// 事件注释： 事件是委托的封装，用于更加安全的Add和Remove委托，且保护委托链
+    /// 原理：触发别的对象的行为
     /// </summary>
     class Program
     {
@@ -22,7 +23,7 @@ namespace Events
         }
     }
     /// <summary>
-    /// 订阅者
+    /// 发布者
     /// </summary>
     public class Publisher
     {
@@ -39,7 +40,7 @@ namespace Events
         }
     }
     /// <summary>
-    /// 发布者
+    /// 订阅
     /// </summary>
     public class Subscriber
     {

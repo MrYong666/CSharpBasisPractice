@@ -10,7 +10,7 @@ namespace LamdaTest
     {
         static void Main(string[] args)
         {
-       
+            Contains.Contains_T();
             Group group = new Group();
             group.GroupTest2();
             group.GroupTest1();

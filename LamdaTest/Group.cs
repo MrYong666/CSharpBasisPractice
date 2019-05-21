@@ -36,6 +36,7 @@ namespace LamdaTest
             var t1 = personal
                .GroupBy(p => new { p.Sex, p.Money });
         }
+     
     }
     public class Test1
     {

@@ -10,6 +10,9 @@ namespace LamdaTest
     {
         static void Main(string[] args)
         {
+            Select select = new Select();
+            select.SelectTest();
+
             Contains.Contains_T();
             Group group = new Group();
             group.GroupTest2();
